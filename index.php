@@ -9,6 +9,12 @@
         <?php
             echo "Hello, World"
         ?>
+        <br>
+        <?= "Hello, World"?>
+        <br>
+        <?php
+            print "Hello, World";
+        ?>
     </h1>
 </body>
 </html>
