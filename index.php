@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Demo</title>
-</head>
-<body>
-<h1>
-    Recommended Books
-</h1>
-
 <?php
 $books = [
     [
@@ -31,34 +20,20 @@ $books = [
     ],
 ];
 
-function filter($items, $fn){
-   $filteredItems = [];
-   foreach ($items as $item){
-       if ($fn($item)){
-           $filteredItems[] = $item;
-       }
-   }
-   return $filteredItems;
+function filter($items, $fn)
+{
+    $filteredItems = [];
+    foreach ($items as $item) {
+        if ($fn($item)) {
+            $filteredItems[] = $item;
+        }
+    }
+    return $filteredItems;
 }
+
 //Define function on the fly (on run time)
 $filteredBooks = filter($books, function ($book) {
     return $book['release_year'] >= 2000;
 });
 
-//Php provide array_filter like this
-
-
-?>
-
-<ul>
-    <?php foreach ($filteredBooks as $book): ?>
-        <li>
-            <a href="<?= $book['purchase_url'] ?>">
-                <?= $book['name'] ?> (<?= $book['release_year'] ?>) - By <?= $book['author'] ?>
-            </a>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-</body>
-</html>
+require "index.view.php";
