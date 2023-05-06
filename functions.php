@@ -2,13 +2,8 @@
 
 function dd($value)
 {
-    echo "<pre style='background-color: black; color: green; font-size: larger;'>";
+    echo "<pre style='background-color: black; line-height:1.2em; font-size: large; font-weight:bold; color: green;'>";
     var_dump($value);
     echo "</pre>";
     die();
-}
-
-function urlIs($value)
-{
-    return $_SERVER['REQUEST_URI'] === $value;
 }
