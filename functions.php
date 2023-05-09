@@ -10,7 +10,7 @@ function dd($value)
 
 function authorize($condition, $status = Response::FPRBIDDEN)
 {
-    if (! $condition){
-        abort($status );
+    if (!$condition) {
+        abort($status);
     }
 }
