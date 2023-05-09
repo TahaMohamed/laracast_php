@@ -7,3 +7,10 @@ function dd($value)
     echo "</pre>";
     die();
 }
+
+function authorize($condition, $status = Response::FPRBIDDEN)
+{
+    if (! $condition){
+        abort($status );
+    }
+}
