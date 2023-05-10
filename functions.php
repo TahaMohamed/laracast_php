@@ -14,3 +14,14 @@ function authorize($condition, $status = Response::FPRBIDDEN)
         abort($status);
     }
 }
+
+function base_path($path): string
+{
+    return BASE_PATH . $path;
+}
+
+function view($path, $attributes = []): string
+{
+    extract($attributes);
+    require base_path('views/' . $path);
+}
